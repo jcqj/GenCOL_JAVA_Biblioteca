@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class SistemaBiblioteca {
     Map<String, Material> catalogo = new HashMap<>();
@@ -47,5 +44,17 @@ public class SistemaBiblioteca {
         }
         //? Eliminamos y retornamos el primero.
         return lista.removeFirst();
+    }
+
+    Set<String> miembros = new HashSet<>();
+
+    //! Registrar miembro
+    public boolean registrarMiembro(String usuario) {
+        return miembros.add(usuario);
+    }
+
+    //! Verificar membresía
+    public boolean tieneMembresia(String usuario) {
+        return miembros.contains(usuario);
     }
 }
